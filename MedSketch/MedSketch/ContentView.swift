@@ -38,6 +38,14 @@ struct ContentView: View {
                 Text("Clear")
             })
             
+            // 戻るボタン
+            Button(action: {
+                lines.removeLast()
+            }, label: {
+                Text("Undo")
+            })
+            .disabled(lines.isEmpty) // linesが空の場合はボタンを無効化
+            
             HStack {
                 // ペンの太さ変更ボタン
                 Button(action: {
